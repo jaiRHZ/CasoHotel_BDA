@@ -63,6 +63,12 @@ public class Usuario extends Cliente{
         return "Usuario{" + "nombres=" + nombres + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + '}';
     }
     
-    
+    public String getNombreCompleto(){
+        String nombreCompleto = null;
+        
+        nombreCompleto = nombres + " " + apellidoPaterno + " " + apellidoMaterno;
+        
+        return nombreCompleto;
+    }
     
 }

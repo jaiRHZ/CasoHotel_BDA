@@ -1,1 +1,8 @@
-mx\itson\hotel_dominio\Hotel_Dominio.class
+dominio\Usuario.class
+dominio\Cliente.class
+dominio\Tarifa.class
+dominio\AgenciaViajes.class
+dominio\CategoriaHotel.class
+dominio\Hotel.class
+dominio\Reservacion.class
+dominio\Habitacion.class
