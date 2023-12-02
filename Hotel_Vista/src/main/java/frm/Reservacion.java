@@ -111,7 +111,7 @@ public class Reservacion extends javax.swing.JFrame {
 
         btnBuscarCliente.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         btnBuscarCliente.setText("Buscar...");
-        btnBuscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel5.setText("Costo Total:");
 
@@ -133,15 +133,15 @@ public class Reservacion extends javax.swing.JFrame {
 
         btnAceptar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnAceptar.setText("Aceptar");
-        btnAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnRestablecer.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnRestablecer.setText("Restablecer");
-        btnRestablecer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRestablecer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnCancelar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
-        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

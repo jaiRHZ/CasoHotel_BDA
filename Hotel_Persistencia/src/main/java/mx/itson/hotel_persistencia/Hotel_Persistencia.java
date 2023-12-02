@@ -11,6 +11,8 @@ package mx.itson.hotel_persistencia;
 public class Hotel_Persistencia {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        
+        
     }
 }
