@@ -106,7 +106,6 @@ public class Reservacion extends javax.swing.JFrame {
         jLabel4.setText("Nombre:");
 
         txtCliente.setEditable(false);
-        txtCliente.setBackground(new java.awt.Color(255, 255, 255));
         txtCliente.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
 
         btnBuscarCliente.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -116,7 +115,6 @@ public class Reservacion extends javax.swing.JFrame {
         jLabel5.setText("Costo Total:");
 
         txtCostoTotal.setEditable(false);
-        txtCostoTotal.setBackground(new java.awt.Color(255, 255, 255));
         txtCostoTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCostoTotalActionPerformed(evt);
