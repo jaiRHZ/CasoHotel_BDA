@@ -5,13 +5,15 @@
 package dominio;
 
 /**
- *
+ * Enumeración que representa las categorías de hoteles basadas en el número de estrellas.
+ * Proporciona cinco niveles de clasificación, desde una estrella hasta cinco estrellas.
  * @author Jairo G. Rodriguez Hernandez 00000213248
  */
 public enum CategoriaHotel {
-    V_ESTRELLAS,
-    IV_ESTRELLAS,
-    III_ESTRELLAS,
-    II_ESTRELLAS,
-    I_ESTRELLAS
+    V_ESTRELLAS,    // Representa un hotel de cinco estrellas
+    IV_ESTRELLAS,   // Representa un hotel de cuatro estrellas
+    III_ESTRELLAS,  // Representa un hotel de tres estrellas
+    II_ESTRELLAS,   // Representa un hotel de dos estrellas
+    I_ESTRELLAS     // Representa un hotel de una estrella
 }
+
