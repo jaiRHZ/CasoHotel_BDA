@@ -17,6 +17,7 @@ public class Tarifa {
     // Atributos de la clase
     private ObjectId id;
     private Float costo;
+    private TipoTarifa tipo;
 
     /**
      * Constructor por defecto para crear una instancia de Tarifa sin parámetros.
@@ -28,9 +29,11 @@ public class Tarifa {
      * Constructor para crear una instancia de Tarifa con un costo.
      *
      * @param costo El costo de la tarifa.
+     * @param tipo  Tipo de tarifa
      */
-    public Tarifa(Float costo) {
+    public Tarifa(Float costo, TipoTarifa tipo) {
         this.costo = costo;
+        this.tipo = tipo;
     }
 
     /**
@@ -38,10 +41,12 @@ public class Tarifa {
      *
      * @param id    El identificador único de la tarifa.
      * @param costo El costo de la tarifa.
+     * @param tipo  El tipo de Tarifa
      */
-    public Tarifa(ObjectId id, Float costo) {
+    public Tarifa(ObjectId id, Float costo, TipoTarifa tipo) {
         this.id = id;
         this.costo = costo;
+        this.tipo = tipo;
     }
 
     /**
@@ -80,6 +85,15 @@ public class Tarifa {
         this.costo = costo;
     }
 
+    public TipoTarifa getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoTarifa tipo) {
+        this.tipo = tipo;
+    }
+
+    
     /**
      * Método sobreescrito para calcular el código hash del objeto Tarifa.
      *

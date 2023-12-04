@@ -93,7 +93,6 @@ public class AgenciaViajeDAO implements IAgenciaViajeDAO{
             while (cursor.hasNext()) {
                 
                 AgenciaViajes agenciaViajes = (AgenciaViajes) cursor.next();
-      
 
                 agencias.add(agenciaViajes);
             }

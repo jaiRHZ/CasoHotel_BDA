@@ -24,6 +24,7 @@ public class Reservacion {
     private Calendar fechaFin;
     private Cliente cliente;
     private List<Habitacion> habitaciones;
+    private int noReservacion;
     
     /**
      * Constructor por defecto para crear una instancia de Reservacion sin parámetros.
@@ -38,12 +39,14 @@ public class Reservacion {
      * @param fechaFin      La fecha de fin de la reservación.
      * @param cliente       El cliente que realiza la reservación.
      * @param habitaciones  La lista de habitaciones reservadas.
+     * @param noReservacion Numero de reservacion
      */
-    public Reservacion(Calendar fechaInicio, Calendar fechaFin, Cliente cliente, List<Habitacion> habitaciones) {
+    public Reservacion(Calendar fechaInicio, Calendar fechaFin, Cliente cliente, List<Habitacion> habitaciones, int noReservacion) {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.cliente = cliente;
         this.habitaciones = habitaciones;
+        this.noReservacion = noReservacion;
     }
 
     /**
@@ -54,13 +57,15 @@ public class Reservacion {
      * @param fechaFin      La fecha de fin de la reservación.
      * @param cliente       El cliente que realiza la reservación.
      * @param habitaciones  La lista de habitaciones reservadas.
+     * @param noReservacion Numero de reservacion
      */
-    public Reservacion(ObjectId id, Calendar fechaInicio, Calendar fechaFin, Cliente cliente, List<Habitacion> habitaciones) {
+    public Reservacion(ObjectId id, Calendar fechaInicio, Calendar fechaFin, Cliente cliente, List<Habitacion> habitaciones, int noReservacion) {
         this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.cliente = cliente;
         this.habitaciones = habitaciones;
+        this.noReservacion = noReservacion;
     }
 
     /**
@@ -153,6 +158,14 @@ public class Reservacion {
         this.habitaciones = habitaciones;
     }
 
+    public int getNoReservacion() {
+        return noReservacion;
+    }
+
+    public void setNoReservacion(int noReservacion) {
+        this.noReservacion = noReservacion;
+    }
+    
     /**
      * Método sobreescrito para calcular el código hash del objeto Reservacion.
      *
