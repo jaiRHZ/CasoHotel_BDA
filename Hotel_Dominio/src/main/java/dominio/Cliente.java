@@ -21,6 +21,7 @@ public class Cliente {
     private ObjectId id;
     private String telefono;
     private List<Reservacion> reservaciones;
+    private String rfc;
 
     /**
      * Constructor por defecto para crear una instancia de Cliente sin parámetros.
@@ -32,9 +33,11 @@ public class Cliente {
      * Constructor para crear una instancia de Cliente con un número de teléfono.
      *
      * @param telefono El teléfono del cliente.
+     * @param rfc      El rfc del cliente.
      */
-    public Cliente(String telefono) {
+    public Cliente(String telefono, String rfc) {
         this.telefono = telefono;
+        this.rfc = rfc;
     }
 
     /**
@@ -42,10 +45,12 @@ public class Cliente {
      *
      * @param id       El identificador único del cliente.
      * @param telefono El teléfono del cliente.
+     * @param rfc      El rfc del cliente.
      */
-    public Cliente(ObjectId id, String telefono) {
+    public Cliente(ObjectId id, String telefono, String rfc) {
         this.id = id;
         this.telefono = telefono;
+        this.rfc = rfc;
     }
 
     /**
@@ -102,6 +107,14 @@ public class Cliente {
         this.reservaciones = reservaciones;
     }
 
+    public String getRfc() {
+        return rfc;
+    }
+
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
+    
     /**
      * Método sobreescrito para calcular el código hash del objeto Cliente.
      *

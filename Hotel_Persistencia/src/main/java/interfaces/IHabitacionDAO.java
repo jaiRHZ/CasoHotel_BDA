@@ -10,6 +10,13 @@ import java.util.List;
  */
 public interface IHabitacionDAO {
     
-    public List<Habitacion> consultarHabitaciones();
+    public Habitacion crearHabitacion(Habitacion habitacion);
     
+    public Habitacion consultarHabitacion(Habitacion habitacion);
+    
+    public Habitacion actualizarHabitacion(Habitacion habitacion);
+    
+    public List<Habitacion> consultarTodoHabitacion();
+    
+    public boolean eliminarHabitacion(Habitacion habitacion);
 }

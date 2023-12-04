@@ -27,32 +27,15 @@ public class Usuario extends Cliente{
     public Usuario() {
     }
 
-    /**
-     * Constructor para crear una instancia de Usuario con nombres, apellidos y teléfono.
-     *
-     * @param nombres          Los nombres del usuario.
-     * @param apellidoPaterno  El apellido paterno del usuario.
-     * @param apellidoMaterno  El apellido materno del usuario.
-     * @param telefono         El teléfono del usuario.
-     */
-    public Usuario(String nombres, String apellidoPaterno, String apellidoMaterno, String telefono) {
-        super(telefono);
+    public Usuario(String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, String rfc) {
+        super(telefono, rfc);
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    /**
-     * Constructor para crear una instancia de Usuario con identificador, nombres, apellidos y teléfono.
-     *
-     * @param nombres          Los nombres del usuario.
-     * @param apellidoPaterno  El apellido paterno del usuario.
-     * @param apellidoMaterno  El apellido materno del usuario.
-     * @param id               El identificador único del usuario.
-     * @param telefono         El teléfono del usuario.
-     */
-    public Usuario(String nombres, String apellidoPaterno, String apellidoMaterno, ObjectId id, String telefono) {
-        super(id, telefono);
+    public Usuario(String nombres, String apellidoPaterno, String apellidoMaterno, ObjectId id, String telefono, String rfc) {
+        super(id, telefono, rfc);
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;

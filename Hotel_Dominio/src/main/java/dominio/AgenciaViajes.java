@@ -24,29 +24,14 @@ public class AgenciaViajes extends Cliente {
     public AgenciaViajes() {
     }
 
-    /**
-     * Constructor para crear una instancia de AgenciaViajes con nombre, usuario y teléfono.
-     *
-     * @param nombre   El nombre de la agencia de viajes.
-     * @param usuario  El usuario asociado a la agencia de viajes.
-     * @param telefono El teléfono de contacto de la agencia de viajes.
-     */
-    public AgenciaViajes(String nombre, Usuario usuario, String telefono) {
-        super(telefono);
+    public AgenciaViajes(String nombre, Usuario usuario, String telefono, String rfc) {
+        super(telefono, rfc);
         this.nombre = nombre;
         this.usuario = usuario;
     }
 
-    /**
-     * Constructor para crear una instancia de AgenciaViajes con nombre, usuario, ID y teléfono.
-     *
-     * @param nombre   El nombre de la agencia de viajes.
-     * @param usuario  El usuario asociado a la agencia de viajes.
-     * @param id       El identificador único de la agencia de viajes.
-     * @param telefono El teléfono de contacto de la agencia de viajes.
-     */
-    public AgenciaViajes(String nombre, Usuario usuario, ObjectId id, String telefono) {
-        super(id, telefono);
+    public AgenciaViajes(String nombre, Usuario usuario, ObjectId id, String telefono, String rfc) {
+        super(id, telefono, rfc);
         this.nombre = nombre;
         this.usuario = usuario;
     }

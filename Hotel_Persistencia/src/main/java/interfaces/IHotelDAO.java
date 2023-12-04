@@ -2,6 +2,7 @@
 package interfaces;
 
 import dominio.Hotel;
+import java.util.List;
 
 /**
  *
@@ -9,6 +10,13 @@ import dominio.Hotel;
  */
 public interface IHotelDAO {
     
-    public Hotel buscarHotel(String nombre);
+    public Hotel crearHotel(Hotel hotel);
     
+    public Hotel consultarHotel(Hotel hotel);
+    
+    public Hotel actualizarHotel(Hotel hotel);
+    
+    public List<Hotel> consultarTodoHotel();
+    
+    public boolean eliminarHotel(Hotel hotel);
 }

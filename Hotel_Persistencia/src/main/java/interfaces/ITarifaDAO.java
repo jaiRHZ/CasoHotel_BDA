@@ -10,6 +10,14 @@ import java.util.List;
  */
 public interface ITarifaDAO {
     
-    public List<Tarifa> consultarTarifas();
+    public Tarifa crearTarifa(Tarifa tarifa);
+    
+    public Tarifa consultarTarifa(Tarifa tarifa);
+    
+    public Tarifa actualizarTarifa(Tarifa tarifa);
+    
+    public List<Tarifa> consultarTodoTarifa();
+    
+    public boolean eliminarTarifa(Tarifa tarifa);
     
 }
