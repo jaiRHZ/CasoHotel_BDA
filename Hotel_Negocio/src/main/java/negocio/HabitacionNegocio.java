@@ -1,7 +1,9 @@
 
 package negocio;
 
+import dominio.Habitacion;
 import fachada.IDatos;
+import java.util.List;
 
 /**
  *
@@ -14,6 +16,17 @@ public class HabitacionNegocio {
     public HabitacionNegocio(IDatos datos) {
         this.datos = datos;
     }
+   
     
+    public Habitacion crearHabitacion(Habitacion habitacion){
+        return datos.crearHabitacion(habitacion);
+    }
     
+    public Habitacion consultarHabitacion(Habitacion habitacion){
+        return datos.consultarHabitacion(habitacion);
+    }
+    
+    public List<Habitacion> consultarTodoHabitacion(){
+        return datos.consultarTodoHabitacion();
+    }
 }

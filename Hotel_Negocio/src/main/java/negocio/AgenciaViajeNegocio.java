@@ -1,7 +1,9 @@
 
 package negocio;
 
+import dominio.AgenciaViajes;
 import fachada.IDatos;
+import java.util.List;
 
 /**
  *
@@ -15,7 +17,16 @@ public class AgenciaViajeNegocio {
         this.datos = datos;
     }
 
+    public AgenciaViajes crearAgenciaViajes(AgenciaViajes agenciaViajes){
+        return datos.crearAgenciaViajes(agenciaViajes);
+    }
     
+    public AgenciaViajes consultarAgenciaViajes(AgenciaViajes agenciaViajes){
+        return datos.consultarAgenciaViajes(agenciaViajes);
+    }
     
-    
+    public List<AgenciaViajes> consultarTodasAgenciaViajes(){
+        return datos.consultarTodasAgenciaViajes();
+    }
 }
+

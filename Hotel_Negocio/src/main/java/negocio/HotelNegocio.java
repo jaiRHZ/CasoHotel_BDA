@@ -1,6 +1,7 @@
 
 package negocio;
 
+import dominio.Hotel;
 import fachada.IDatos;
 
 /**
@@ -15,5 +16,8 @@ public class HotelNegocio {
         this.datos = datos;
     }
     
+    public Hotel crearHotel(Hotel hotel){
+        return datos.crearHotel(hotel);
+    }
     
 }

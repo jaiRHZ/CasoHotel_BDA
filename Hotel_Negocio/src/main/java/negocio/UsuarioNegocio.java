@@ -1,7 +1,9 @@
 
 package negocio;
 
+import dominio.Usuario;
 import fachada.IDatos;
+import java.util.List;
 
 /**
  *
@@ -16,4 +18,15 @@ public class UsuarioNegocio {
     }
     
     
+    public Usuario crearUsuario(Usuario usuario){
+        return datos.crearUsuario(usuario);
+    }
+    
+    public Usuario consultarUsuario(Usuario usuario) {
+        return datos.consultarUsuario(usuario);
+    }
+    
+    public List<Usuario> consultarTodoUsuario() {
+        return datos.consultarTodoUsuario();
+    }
 }

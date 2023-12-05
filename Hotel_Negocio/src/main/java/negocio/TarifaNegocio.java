@@ -1,6 +1,7 @@
 
 package negocio;
 
+import dominio.Tarifa;
 import fachada.IDatos;
 
 /**
@@ -15,4 +16,15 @@ public class TarifaNegocio {
         this.datos = datos;
     }
     
+    public Tarifa crearTarifa(Tarifa tarifa){
+        return datos.crearTarifa(tarifa);
+    }
+    
+    public Tarifa consultarTarifa(Tarifa tarifa){
+        return datos.consultarTarifa(tarifa);
+    }
+    
+    public Tarifa consultarTodoTarifa(){
+        return (Tarifa) datos.consultarTodoTarifa();
+    }
 }
