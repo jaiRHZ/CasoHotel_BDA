@@ -5,4 +5,5 @@ dominio\AgenciaViajes.class
 dominio\CategoriaHotel.class
 dominio\Hotel.class
 dominio\Reservacion.class
+dominio\TipoTarifa.class
 dominio\Habitacion.class

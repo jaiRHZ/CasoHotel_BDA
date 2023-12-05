@@ -36,9 +36,9 @@ public class ReservacionDAO implements IReservacionDAO{
     
         try {
             // Verificar si ya existe una reservacion con el mismo numero
-            Document queryRfc = new Document("noReservacion", reservacion.getNoReservacion());
-            long countRfc = this.COLECCION.countDocuments(queryRfc);
-            if (countRfc > 0) {
+            Document queryNoReservacion = new Document("noReservacion", reservacion.getNoReservacion());
+            long countNoReservacion = this.COLECCION.countDocuments(queryNoReservacion);
+            if (countNoReservacion > 0) {
                 JOptionPane.showMessageDialog(null, "Ya existe una reservacion con "
                         + "el mismo Numero de reservacion", "Error", JOptionPane.ERROR_MESSAGE);
                 throw new Exception("Ya existe una reservacion con el mismo NUmero");
