@@ -111,6 +111,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         botonSalir.setFont(new java.awt.Font(".SF NS Text", 1, 13)); // NOI18N
         botonSalir.setForeground(new java.awt.Color(0, 0, 0));
         botonSalir.setText("Salir");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
         jPanel2.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 73, -1));
 
         jLabel5.setFont(new java.awt.Font(".SF NS Text", 1, 13)); // NOI18N
@@ -162,6 +167,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private void txtApellidoPatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoPatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoPatActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments

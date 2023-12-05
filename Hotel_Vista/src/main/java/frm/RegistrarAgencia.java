@@ -95,6 +95,11 @@ public class RegistrarAgencia extends javax.swing.JDialog {
         botonSalir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         botonSalir.setForeground(new java.awt.Color(0, 0, 0));
         botonSalir.setText("Salir");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/agencia.jpg"))); // NOI18N
 
@@ -163,6 +168,11 @@ public class RegistrarAgencia extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

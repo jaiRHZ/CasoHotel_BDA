@@ -105,9 +105,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         menuConsultasCliente.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         menuConsultasCliente.setText("Cliente");
+        menuConsultasCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuConsultasClienteActionPerformed(evt);
+            }
+        });
         menuConsultas.add(menuConsultasCliente);
 
         menuConsultasReservacion.setText("Consultar Reservacion");
+        menuConsultasReservacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuConsultasReservacionActionPerformed(evt);
+            }
+        });
         menuConsultas.add(menuConsultasReservacion);
 
         jMenuBar1.add(menuConsultas);
@@ -150,6 +160,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         ra.setVisible(true);
     }//GEN-LAST:event_menuRegistrarAgenciaActionPerformed
+
+    private void menuConsultasClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConsultasClienteActionPerformed
+        // TODO add your handling code here:
+        BuscarCliente bc = new BuscarCliente();
+        
+        bc.setVisible(true);
+    }//GEN-LAST:event_menuConsultasClienteActionPerformed
+
+    private void menuConsultasReservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConsultasReservacionActionPerformed
+        // TODO add your handling code here:
+        ConsultarReservacion cr = new ConsultarReservacion();
+        
+        cr.setVisible(true);
+    }//GEN-LAST:event_menuConsultasReservacionActionPerformed
 
     /**
      * @param args the command line arguments
