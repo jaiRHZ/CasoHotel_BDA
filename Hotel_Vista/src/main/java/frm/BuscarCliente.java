@@ -4,17 +4,73 @@
  */
 package frm;
 
+import javax.swing.table.DefaultTableModel;
+import dominio.Usuario;
+import factory.FabricaNegocio;
+import java.util.LinkedList;
+import java.util.List;
+import javax.swing.ListSelectionModel;
+
+
 /**
  *
  * @author Jairo G. Rodriguez Hernandez 00000213248
  */
 public class BuscarCliente extends javax.swing.JDialog {
+    FabricaNegocio fabricaNegocio;
+    List<Usuario> usuarios = new LinkedList<>();
+    public Usuario usuario;
 
     /**
      * Creates new form buscarCliente
      */
     public BuscarCliente() {
         initComponents();
+        fabricaNegocio = new FabricaNegocio();
+         this.tblClientes.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.usuarios = fabricaNegocio.crearUsuarioNegocio().consultarTodoUsuario();
+        this.cargarTablaDefecto();
+    }
+    
+     public void cargarTablaDefecto() {
+        DefaultTableModel modeloTabla = (DefaultTableModel) this.tblClientes.getModel();
+        //Limpia tabla anterior
+        modeloTabla.setRowCount(0);
+        usuarios.forEach(persona -> {
+            Object[] fila = {
+                usuario.getNombres(),
+                usuario.getApellidoPaterno(),
+                usuario.getApellidoMaterno(),
+                usuario.getTelefono(),
+                usuario.getRfc()
+            };
+            modeloTabla.addRow(fila);
+        });
+    }
+    
+    public void cargarTablaBuscador(String tipo) {
+        this.usuarios = fabricaNegocio.crearUsuarioNegocio().consultarTodoUsuario();
+        DefaultTableModel modeloTabla = (DefaultTableModel) this.tblClientes.getModel();
+        //Limpia tabla anterior
+        modeloTabla.setRowCount(0);
+        usuarios.forEach(persona -> {
+            Object[] fila = {
+                usuario.getNombres(),
+                usuario.getApellidoPaterno(),
+                usuario.getApellidoMaterno(),
+                usuario.getTelefono(),
+                usuario.getRfc()
+            };
+            if (tipo.equals("Nombre")) {
+                String nombre = usuario.getNombres() + " " + usuario.getApellidoPaterno() + " " + usuario.getApellidoMaterno();
+                String textoBuscar = txtBuscarCliente.getText();
+                if (textoBuscar != null && nombre.toLowerCase().contains(textoBuscar.toLowerCase())) {
+                    modeloTabla.addRow(fila);
+                }
+
+            }
+
+        });
     }
 
     /**
@@ -31,7 +87,7 @@ public class BuscarCliente extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         txtBuscarCliente = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblClientes = new javax.swing.JTable();
         btnCerrar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -46,6 +102,11 @@ public class BuscarCliente extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel1KeyPressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -53,9 +114,14 @@ public class BuscarCliente extends javax.swing.JDialog {
 
         txtBuscarCliente.setBackground(new java.awt.Color(255, 255, 255));
         txtBuscarCliente.setText("Buscar");
+        txtBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarClienteActionPerformed(evt);
+            }
+        });
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientes.setBackground(new java.awt.Color(255, 255, 255));
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -66,7 +132,7 @@ public class BuscarCliente extends javax.swing.JDialog {
                 "Cliente"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblClientes);
 
         btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
         btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -164,6 +230,15 @@ public class BuscarCliente extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
+    private void txtBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarClienteActionPerformed
+        // TODO add your handling code here:
+        this.cargarTablaBuscador(this.txtBuscarCliente.getText());
+    }//GEN-LAST:event_txtBuscarClienteActionPerformed
+
+    private void jPanel1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1KeyPressed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     private javax.swing.JLabel jLabel1;
@@ -173,7 +248,7 @@ public class BuscarCliente extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblClientes;
     private javax.swing.JTextField txtBuscarCliente;
     // End of variables declaration//GEN-END:variables
 }

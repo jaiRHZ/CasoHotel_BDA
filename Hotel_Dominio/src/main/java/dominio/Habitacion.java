@@ -28,6 +28,14 @@ public class Habitacion {
     public Habitacion() {
     }
 
+    public Habitacion(String noHabitacion, String planta, Tarifa tarifa) {
+        this.noHabitacion = noHabitacion;
+        this.planta = planta;
+        this.tarifa = tarifa;
+    }
+    
+    
+
     /**
      * Constructor para crear una instancia de Habitacion con número de habitación, planta, tarifa y hotel.
      *

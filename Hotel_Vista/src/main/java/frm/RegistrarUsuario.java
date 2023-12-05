@@ -4,17 +4,46 @@
  */
 package frm;
 
+import dominio.Cliente;
+import dominio.Usuario;
+import fachada.INegocio;
+import factory.FabricaNegocio;
+import static jdk.internal.org.jline.utils.Colors.s;
+import negocio.UsuarioNegocio;
+
 /**
  *
  * @author Jairo G. Rodriguez Hernandez 00000213248
  */
 public class RegistrarUsuario extends javax.swing.JFrame {
+    
+    private FabricaNegocio fabricaNegocio;
 
     /**
      * Creates new form registrarCliente
      */
+    
     public RegistrarUsuario() {
         initComponents();
+        fabricaNegocio = new FabricaNegocio();
+    }
+    
+    public void registrarUsuario(){
+        Usuario usuario = new Usuario(this.txtNombre.getText(), this.txtApellidoPat.getText(), this.txtApellidoMat.getText(), 
+                this.txtTelefono.getText(), this.txtRFC.getText());
+        
+        System.out.println("Usuario creado" + usuario.toString());
+        
+        fabricaNegocio.crearUsuarioNegocio().crearUsuario(usuario);
+        this.vaciarFormulario();
+    }
+    
+    public void vaciarFormulario(){
+        this.txtNombre.setText("");
+        this.txtApellidoPat.setText("");
+        this.txtApellidoMat.setText("");
+        this.txtTelefono.setText("");
+        this.txtRFC.setText("");
     }
 
     /**
@@ -105,6 +134,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         botonRegistrar.setFont(new java.awt.Font(".SF NS Text", 1, 13)); // NOI18N
         botonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
         botonRegistrar.setText("Registrar");
+        botonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrarActionPerformed(evt);
+            }
+        });
         jPanel2.add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
         botonSalir.setBackground(new java.awt.Color(255, 255, 255));
@@ -172,6 +206,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_botonSalirActionPerformed
+
+    private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
+        // TODO add your handling code here:
+        this.registrarUsuario();
+    }//GEN-LAST:event_botonRegistrarActionPerformed
 
     /**
      * @param args the command line arguments

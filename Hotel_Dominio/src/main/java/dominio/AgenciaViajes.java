@@ -24,6 +24,11 @@ public class AgenciaViajes extends Cliente {
     public AgenciaViajes() {
     }
 
+    public AgenciaViajes(String nombre, String telefono, String rfc) {
+        super(telefono, rfc);
+        this.nombre = nombre;
+    }
+    
     public AgenciaViajes(String nombre, Usuario usuario, String telefono, String rfc) {
         super(telefono, rfc);
         this.nombre = nombre;

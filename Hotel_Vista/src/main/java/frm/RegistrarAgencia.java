@@ -4,17 +4,41 @@
  */
 package frm;
 
+import dominio.AgenciaViajes;
+import fachada.INegocio;
+import factory.FabricaNegocio;
+
 /**
  *
  * @author eduar
  */
 public class RegistrarAgencia extends javax.swing.JDialog {
+    
+    private INegocio negocio;
+    private FabricaNegocio fabricaNegocio;
 
     /**
      * Creates new form RegistrarAgencia
      */
-    public RegistrarAgencia() {
+
+    public RegistrarAgencia(){
         initComponents();
+        fabricaNegocio = new FabricaNegocio();
+    }
+    
+    public void registrarAgencia(){
+        AgenciaViajes agenciaViajes = new AgenciaViajes(this.txtNombre.getText(), this.txtRFC.getText(), 
+                this.txtTelefono.getText());
+        
+        fabricaNegocio.crearAgenciaViajeNegocio().crearAgenciaViajes(agenciaViajes);
+        this.vaciarFormulario();
+        
+    }
+    
+    public void vaciarFormulario(){
+        this.txtNombre.setText("");
+        this.txtRFC.setText("");
+        this.txtTelefono.setText("");
     }
 
     
@@ -90,6 +114,11 @@ public class RegistrarAgencia extends javax.swing.JDialog {
         botonRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         botonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
         botonRegistrar.setText("Registrar");
+        botonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrarActionPerformed(evt);
+            }
+        });
 
         botonSalir.setBackground(new java.awt.Color(255, 255, 255));
         botonSalir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -173,6 +202,11 @@ public class RegistrarAgencia extends javax.swing.JDialog {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_botonSalirActionPerformed
+
+    private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
+        // TODO add your handling code here:
+        this.registrarAgencia();
+    }//GEN-LAST:event_botonRegistrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

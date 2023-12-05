@@ -4,17 +4,96 @@
  */
 package frm;
 
+import dominio.Habitacion;
+import dominio.Tarifa;
+import factory.FabricaNegocio;
+import java.awt.List;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Jairo G. Rodriguez Hernandez 00000213248
  */
 public class Reservacion extends javax.swing.JFrame {
 
+    private FabricaNegocio fabricaNegocio;
+    private List<Habitacion> listaHabitaciones;
+    private List<Habitacion> habitacionesSeleccionadas;
+    
     /**
      * Creates new form reservacion
      */
     public Reservacion() {
         initComponents();
+        fabricaNegocio = new FabricaNegocio();
+        listaHabitaciones = fabricaNegocio.crearHabitacionNegocio().consultarTodoHabitacion();
+        habitacionesSeleccionadas = new ArrayList<>();
+    }
+    
+    public void llenarTablaHabitacion() {
+ 
+        DefaultTableModel modeloTabla = (DefaultTableModel) this.tablaSeleccionar.getModel();
+        // Limpia tabla anterior
+        modeloTabla.setRowCount(0);
+        listaHabitaciones.forEach(habitacion -> {
+            
+            Object[] fila = {
+                habitacion.getNoHabitacion()
+            };
+            modeloTabla.addRow(fila);
+        });
+    }
+    
+    public void llenarTablaHabitacionSeleccionado() {
+        
+        DefaultTableModel modeloTabla = (DefaultTableModel) this.tablaSeleccionado.getModel();
+        //Limpia tabla anterior
+        modeloTabla.setRowCount(0);
+        listaHabitaciones.forEach(habitacion -> {
+
+            Object[] fila = {
+                habitacion.getNoHabitacion()
+            };
+            modeloTabla.addRow(fila);
+
+        });
+    }
+    
+    public void vaciarFormulario() {
+        this.txtCliente.setText("");
+        this.txtCostoTotal.setText("");
+        this.listaHabitaciones.clear();
+        this.habitacionesSeleccionadas.clear();
+        listaHabitaciones = fabricaNegocio.crearHabitacionNegocio().consultarTodoHabitacion();
+        this.llenarTablaHabitacion();
+        this.llenarTablaHabitacionSeleccionado();
+    }
+    
+    public void seleccionarHabitacion() {
+        int fila = this.tablaSeleccionar.getSelectedRow();
+        Habitacion habitacionSeleccionada = new Habitacion((String)this.tablaSeleccionar.getValueAt(fila, 0), (String)this.tablaSeleccionar.getValueAt(fila, 1), (Tarifa)this.tablaSeleccionar.getValueAt(fila, 2));
+
+        this.habitacionesSeleccionadas.add(habitacionSeleccionada);
+
+        this.listaHabitaciones.remove(habitacionSeleccionada);
+
+        this.llenarTablaHabitacionSeleccionado();
+        this.llenarTablaHabitacion();
+
+    }
+    
+     public void seleccionarHabitacionSeleccionados() {
+        int fila = this.tablaSeleccionado.getSelectedRow();
+        Habitacion habitacionSeleccionada = new Habitacion((String) this.tablaSeleccionado.getValueAt(fila, 0), (String) this.tablaSeleccionado.getValueAt(fila, 1), (Tarifa) this.tablaSeleccionado.getValueAt(fila, 2));
+
+        this.habitacionesSeleccionadas.remove(habitacionSeleccionada);
+
+        this.listaHabitaciones.add(habitacionSeleccionada);
+
+        this.llenarTablaHabitacionSeleccionado();
+        this.llenarTablaHabitacion();
+
     }
 
     /**
@@ -162,7 +241,6 @@ public class Reservacion extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Costo Total:");
 
-        txtCostoTotal.setEditable(false);
         txtCostoTotal.setBackground(new java.awt.Color(255, 255, 255));
         txtCostoTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
