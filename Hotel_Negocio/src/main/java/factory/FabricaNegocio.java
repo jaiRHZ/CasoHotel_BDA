@@ -1,6 +1,8 @@
 
 package factory;
 
+import fachada.FachadaDAO;
+import fachada.IDatos;
 import negocio.AgenciaViajeNegocio;
 import negocio.HabitacionNegocio;
 import negocio.HotelNegocio;
@@ -14,36 +16,41 @@ import negocio.UsuarioNegocio;
  */
 public class FabricaNegocio implements IFabricaNegocio{
 
+    IDatos datos;
+
+    public FabricaNegocio() {
+        this.datos = new FachadaDAO();
+    }
     
     
     @Override
     public AgenciaViajeNegocio crearAgenciaViajeNegocio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new AgenciaViajeNegocio(datos);
     }
 
     @Override
     public HabitacionNegocio crearHabitacionNegocio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new HabitacionNegocio(datos);
     }
 
     @Override
     public HotelNegocio crearHotelNegocio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new HotelNegocio(datos);
     }
 
     @Override
     public ReservacionNegocio crearReservacionNegocio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new ReservacionNegocio(datos);
     }
 
     @Override
     public TarifaNegocio crearTarifaNegocio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new TarifaNegocio(datos);
     }
 
     @Override
     public UsuarioNegocio crearUsuarioNegocio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new UsuarioNegocio(datos);
     }
     
 }

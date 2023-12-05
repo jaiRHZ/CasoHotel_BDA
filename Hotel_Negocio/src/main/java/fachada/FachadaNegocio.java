@@ -7,7 +7,14 @@ import dominio.Hotel;
 import dominio.Reservacion;
 import dominio.Tarifa;
 import dominio.Usuario;
+import factory.FabricaNegocio;
 import java.util.List;
+import negocio.AgenciaViajeNegocio;
+import negocio.HabitacionNegocio;
+import negocio.HotelNegocio;
+import negocio.ReservacionNegocio;
+import negocio.TarifaNegocio;
+import negocio.UsuarioNegocio;
 
 /**
  *
@@ -15,6 +22,25 @@ import java.util.List;
  */
 public class FachadaNegocio implements INegocio{
 
+    AgenciaViajeNegocio agenciaViajeNegocio;
+    HabitacionNegocio habitacionNegocio;
+    HotelNegocio hotelNegocio;
+    ReservacionNegocio reservacionNegocio;
+    TarifaNegocio tarifaNegocio;
+    UsuarioNegocio usuarioNegocio;
+
+    public FachadaNegocio() {
+        FabricaNegocio fabrica = new FabricaNegocio();
+        
+        this.agenciaViajeNegocio = fabrica.crearAgenciaViajeNegocio();
+        this.habitacionNegocio = fabrica.crearHabitacionNegocio();
+        this.hotelNegocio = fabrica.crearHotelNegocio();
+        this.reservacionNegocio = fabrica.crearReservacionNegocio();
+        this.tarifaNegocio = fabrica.crearTarifaNegocio();
+        this.usuarioNegocio = fabrica.crearUsuarioNegocio();
+    }
+    
+    
     @Override
     public AgenciaViajes crearAgenciaViajes(AgenciaViajes agenciaViajes) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
