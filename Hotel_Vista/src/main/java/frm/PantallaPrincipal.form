@@ -24,11 +24,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Usuario"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuRegistrarUsuarioActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuRegistrarAgencia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agencia de Viajes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuRegistrarAgenciaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

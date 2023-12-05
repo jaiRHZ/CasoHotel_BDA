@@ -44,9 +44,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         menuRegistrar.setText("Registrar");
 
         menuRegistrarUsuario.setText("Usuario");
+        menuRegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuRegistrarUsuarioActionPerformed(evt);
+            }
+        });
         menuRegistrar.add(menuRegistrarUsuario);
 
         menuRegistrarAgencia.setText("Agencia de Viajes");
+        menuRegistrarAgencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuRegistrarAgenciaActionPerformed(evt);
+            }
+        });
         menuRegistrar.add(menuRegistrarAgencia);
 
         jMenuBar1.add(menuRegistrar);
@@ -87,6 +97,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         reservacion.setVisible(true);
 
     }//GEN-LAST:event_menuReservarReservacionActionPerformed
+
+    private void menuRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRegistrarUsuarioActionPerformed
+        // TODO add your handling code here:
+        RegistrarUsuario ru = new RegistrarUsuario();
+        
+        ru.setVisible(true);
+    }//GEN-LAST:event_menuRegistrarUsuarioActionPerformed
+
+    private void menuRegistrarAgenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRegistrarAgenciaActionPerformed
+        // TODO add your handling code here:
+        RegistrarAgencia ra = new RegistrarAgencia();
+        
+        ra.setVisible(true);
+    }//GEN-LAST:event_menuRegistrarAgenciaActionPerformed
 
     /**
      * @param args the command line arguments
