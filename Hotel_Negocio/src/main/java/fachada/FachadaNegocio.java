@@ -43,12 +43,12 @@ public class FachadaNegocio implements INegocio{
     
     @Override
     public AgenciaViajes crearAgenciaViajes(AgenciaViajes agenciaViajes) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return agenciaViajeNegocio.crearAgenciaViajes(agenciaViajes);
     }
 
     @Override
     public AgenciaViajes consultarAgenciaViajes(AgenciaViajes agenciaViajes) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return agenciaViajeNegocio.consultarAgenciaViajes(agenciaViajes);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class FachadaNegocio implements INegocio{
 
     @Override
     public List<AgenciaViajes> consultarTodasAgenciaViajes() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return agenciaViajeNegocio.consultarTodasAgenciaViajes();
     }
 
     @Override
@@ -66,14 +66,15 @@ public class FachadaNegocio implements INegocio{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    //Habitacion
     @Override
     public Habitacion crearHabitacion(Habitacion habitacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return habitacionNegocio.crearHabitacion(habitacion);
     }
 
     @Override
     public Habitacion consultarHabitacion(Habitacion habitacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return habitacionNegocio.consultarHabitacion(habitacion);
     }
 
     @Override
@@ -83,7 +84,7 @@ public class FachadaNegocio implements INegocio{
 
     @Override
     public List<Habitacion> consultarTodoHabitacion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return habitacionNegocio.consultarTodoHabitacion();
     }
 
     @Override
@@ -91,9 +92,10 @@ public class FachadaNegocio implements INegocio{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    //Hotel
     @Override
     public Hotel crearHotel(Hotel hotel) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return hotelNegocio.crearHotel(hotel);
     }
 
     @Override
@@ -116,14 +118,15 @@ public class FachadaNegocio implements INegocio{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    //Reservacion
     @Override
     public Reservacion crearReservacion(Reservacion reservacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return reservacionNegocio.crearReservacion(reservacion);
     }
 
     @Override
     public Reservacion consultarReservacion(Reservacion reservacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return reservacionNegocio.consultarReservacion(reservacion);
     }
 
     @Override
@@ -133,7 +136,7 @@ public class FachadaNegocio implements INegocio{
 
     @Override
     public List<Reservacion> consultarTodoReservacion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return (List<Reservacion>) reservacionNegocio.consultarTodoReservacion();
     }
 
     @Override
@@ -141,14 +144,15 @@ public class FachadaNegocio implements INegocio{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    //Tarifa
     @Override
     public Tarifa crearTarifa(Tarifa tarifa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return tarifaNegocio.crearTarifa(tarifa);
     }
 
     @Override
     public Tarifa consultarTarifa(Tarifa tarifa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return tarifaNegocio.consultarTarifa(tarifa);
     }
 
     @Override
@@ -158,7 +162,7 @@ public class FachadaNegocio implements INegocio{
 
     @Override
     public List<Tarifa> consultarTodoTarifa() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return (List<Tarifa>) tarifaNegocio.consultarTodoTarifa();
     }
 
     @Override
@@ -166,14 +170,15 @@ public class FachadaNegocio implements INegocio{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    //Usuario
     @Override
     public Usuario crearUsuario(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return usuarioNegocio.crearUsuario(usuario);
     }
 
     @Override
     public Usuario consultarUsuario(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return usuarioNegocio.consultarUsuario(usuario);
     }
 
     @Override
@@ -183,7 +188,7 @@ public class FachadaNegocio implements INegocio{
 
     @Override
     public List<Usuario> consultarTodoUsuario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return usuarioNegocio.consultarTodoUsuario();
     }
 
     @Override
