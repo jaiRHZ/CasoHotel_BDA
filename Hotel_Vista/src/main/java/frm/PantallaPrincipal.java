@@ -32,6 +32,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         menuRegistrarAgencia = new javax.swing.JMenuItem();
         menuReservacion = new javax.swing.JMenu();
         menuReservarReservacion = new javax.swing.JMenuItem();
+        menuConsultas = new javax.swing.JMenu();
+        menuConsultasCliente = new javax.swing.JMenuItem();
+        menuConsultasReservacion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla Principal");
@@ -61,6 +64,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menuRegistrar);
 
+        menuReservacion.setBorder(null);
         menuReservacion.setText("Reservar");
 
         menuReservarReservacion.setText("Nueva Reservación");
@@ -72,6 +76,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         menuReservacion.add(menuReservarReservacion);
 
         jMenuBar1.add(menuReservacion);
+
+        menuConsultas.setText("Consultar");
+
+        menuConsultasCliente.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        menuConsultasCliente.setText("Cliente");
+        menuConsultas.add(menuConsultasCliente);
+
+        menuConsultasReservacion.setText("Consultar Reservacion");
+        menuConsultas.add(menuConsultasReservacion);
+
+        jMenuBar1.add(menuConsultas);
 
         setJMenuBar(jMenuBar1);
 
@@ -150,6 +165,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu menuConsultas;
+    private javax.swing.JMenuItem menuConsultasCliente;
+    private javax.swing.JMenuItem menuConsultasReservacion;
     private javax.swing.JMenu menuRegistrar;
     private javax.swing.JMenuItem menuRegistrarAgencia;
     private javax.swing.JMenuItem menuRegistrarUsuario;

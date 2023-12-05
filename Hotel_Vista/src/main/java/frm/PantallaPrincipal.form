@@ -40,6 +40,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuReservacion">
           <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Reservar"/>
           </Properties>
           <SubComponents>
@@ -50,6 +53,26 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuReservarReservacionActionPerformed"/>
               </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuConsultas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Consultar"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuConsultasCliente">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Roboto" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cliente"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuConsultasReservacion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consultar Reservacion"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
