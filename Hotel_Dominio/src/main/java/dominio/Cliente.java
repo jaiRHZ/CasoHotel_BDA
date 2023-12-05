@@ -106,11 +106,21 @@ public class Cliente {
     public void setReservaciones(List<Reservacion> reservaciones) {
         this.reservaciones = reservaciones;
     }
-
+    
+    /**
+     * Obtiene el rfc del cliente
+     * 
+     * @return rfc del cliente
+     */
     public String getRfc() {
         return rfc;
     }
-
+    
+    /**
+     * Establece el rfc del cliente
+     * 
+     * @param rfc rfc del cliente
+     */
     public void setRfc(String rfc) {
         this.rfc = rfc;
     }

@@ -9,10 +9,12 @@ import org.bson.types.ObjectId;
 /**
  * Clase Usuario que extiende de Cliente, representando un usuario en un sistema de gestión hotelera.
  * Cada usuario tiene, además de los atributos de Cliente, nombres, apellido paterno y apellido materno.
- * La clase proporciona métodos para gestionar estos atributos y obtener el nombre completo del usuario.
+ * Esta versión extendida de la clase también incorpora el RFC del usuario.
+ * La clase proporciona métodos para gestionar estos atributos, obtener el nombre completo del usuario y gestionar la información de contacto y fiscal.
  * Incluye también un método sobreescrito para toString.
  * 
- * @author Jairo G. Rodriguez Hernandez 00000213248
+ * @author Jairo G. Rodriguez Hernandez
+ * @version 00000213248
  */
 public class Usuario extends Cliente{
     
@@ -27,6 +29,15 @@ public class Usuario extends Cliente{
     public Usuario() {
     }
 
+    /**
+     * Constructor para crear una instancia de Usuario con nombres, apellidos, teléfono y RFC.
+     *
+     * @param nombres          Los nombres del usuario.
+     * @param apellidoPaterno  El apellido paterno del usuario.
+     * @param apellidoMaterno  El apellido materno del usuario.
+     * @param telefono         El teléfono del usuario.
+     * @param rfc              El RFC del usuario.
+     */
     public Usuario(String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, String rfc) {
         super(telefono, rfc);
         this.nombres = nombres;
@@ -34,6 +45,16 @@ public class Usuario extends Cliente{
         this.apellidoMaterno = apellidoMaterno;
     }
 
+    /**
+     * Constructor para crear una instancia de Usuario con identificador, nombres, apellidos, teléfono y RFC.
+     *
+     * @param nombres          Los nombres del usuario.
+     * @param apellidoPaterno  El apellido paterno del usuario.
+     * @param apellidoMaterno  El apellido materno del usuario.
+     * @param id               El identificador único del usuario.
+     * @param telefono         El teléfono del usuario.
+     * @param rfc              El RFC del usuario.
+     */
     public Usuario(String nombres, String apellidoPaterno, String apellidoMaterno, ObjectId id, String telefono, String rfc) {
         super(id, telefono, rfc);
         this.nombres = nombres;
@@ -114,3 +135,4 @@ public class Usuario extends Cliente{
         return nombres + " " + apellidoPaterno + " " + apellidoMaterno;
     }
 }
+

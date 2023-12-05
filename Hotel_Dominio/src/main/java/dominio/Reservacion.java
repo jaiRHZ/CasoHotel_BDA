@@ -157,11 +157,21 @@ public class Reservacion {
     public void setHabitaciones(List<Habitacion> habitaciones) {
         this.habitaciones = habitaciones;
     }
-
+    
+    /**
+     * Obtiene el número de reservación
+     * 
+     * @return número de reservación
+     */
     public int getNoReservacion() {
         return noReservacion;
     }
-
+    
+    /**
+     * Establece el número de reservación
+     * 
+     * @param noReservacion número de reservación a establecer
+     */
     public void setNoReservacion(int noReservacion) {
         this.noReservacion = noReservacion;
     }
