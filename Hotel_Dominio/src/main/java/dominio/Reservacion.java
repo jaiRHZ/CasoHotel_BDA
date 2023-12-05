@@ -227,8 +227,24 @@ public class Reservacion {
     public float costoTotal() {
         Float costoTotal = 0.0f;
         for (Habitacion habitacion : habitaciones) {
-            costoTotal += habitacion.getTarifa().getCosto();
+            Tarifa tarifa = habitacion.getTarifa();
+            long diasEstancia = calcularDiasEstancia(fechaInicio, fechaFin);
+            
+            costoTotal += tarifa.getCosto() * diasEstancia;
         }
         return costoTotal;  
     }
+    
+    /**
+     * Calcula la diferencia en días entre dos fechas.
+     * 
+     * @param fechaEntrada La fecha de inicio.
+     * @param fechaSalida La fecha de fin.
+     * @return La diferencia en días.
+     */
+    private long calcularDiasEstancia(Calendar fechaEntrada, Calendar fechaSalida){
+        long diferenciaMillis = fechaEntrada.getTimeInMillis() - fechaSalida.getTimeInMillis();
+        return diferenciaMillis / (24*60*60*1000);
+    }
+    
 }
