@@ -13,8 +13,7 @@ import org.bson.types.ObjectId;
  * La clase proporciona métodos para gestionar estos atributos, obtener el nombre completo del usuario y gestionar la información de contacto y fiscal.
  * Incluye también un método sobreescrito para toString.
  * 
- * @author Jairo G. Rodriguez Hernandez
- * @version 00000213248
+ * @author Jairo G. Rodriguez Hernandez 00000213248
  */
 public class Usuario extends Cliente{
     
