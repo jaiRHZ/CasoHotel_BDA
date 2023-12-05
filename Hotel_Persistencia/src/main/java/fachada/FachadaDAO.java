@@ -22,6 +22,8 @@ import java.util.List;
  * AgenciaViajes, Habitacion, Hotel, Reservacion, Tarifa y Usuario. Utiliza el
  * patrón de diseño Fachada para simplificar la interacción entre la lógica de
  * negocio y las operaciones de acceso a datos.
+ * 
+ * @autor HP
  */
 public class FachadaDAO implements IDatos {
 
